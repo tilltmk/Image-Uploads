@@ -1,50 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-
   <!-- Hintergrund -->
-  <rect width="100%" height="100%" fill="none"/>
-
-  <!-- Definieren der Farben und Verläufe -->
   <defs>
-    <!-- Gradient für den Globus -->
-    <radialGradient id="globeGradient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1A2B6A"/>
-      <stop offset="100%" stop-color="#3C5FA3"/>
+    <!-- Weicher, dunkler Hintergrund für den geheimnisvollen Look -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0A1F44" />
+      <stop offset="100%" stop-color="#000D29" />
     </radialGradient>
-    
-    <!-- Muster für die Kontinente -->
-    <pattern id="continentPattern" patternUnits="userSpaceOnUse" width="10" height="10">
-      <path d="M0,5 L10,5" stroke="#FFFFFF" stroke-width="0.5"/>
-      <path d="M5,0 L5,10" stroke="#FFFFFF" stroke-width="0.5"/>
-    </pattern>
-
-    <!-- Verlauf für die Elektronenbahnen -->
-    <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6D87C5"/>
-      <stop offset="100%" stop-color="#4E66A9"/>
-    </linearGradient>
+    <!-- Gradient für die Erde -->
+    <radialGradient id="globeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6CAFE4" />
+      <stop offset="100%" stop-color="#3A6D94" />
+    </radialGradient>
   </defs>
 
-  <!-- Weltkugel (Kern) -->
-  <g transform="translate(150,150)">
-    <circle r="50" fill="url(#globeGradient)" stroke="#1A2B6A" stroke-width="2"/>
-    
-    <!-- Vereinfachte Kontinente -->
-    <path d="M-20,-5 Q-10,-15 0,-5 Q10,5 0,15 Q-10,15 -20,5 Q-30,0 -20,-5" fill="url(#continentPattern)" opacity="0.4"/>
-    <path d="M10,-25 Q15,-15 20,-25 Q25,-35 30,-25 Q25,-15 20,-25 Q15,-35 10,-25" fill="url(#continentPattern)" opacity="0.4"/>
+  <!-- Hintergrundkreis -->
+  <circle cx="150" cy="150" r="140" fill="url(#bgGradient)" />
+
+  <!-- Weltkugel -->
+  <circle cx="150" cy="150" r="50" fill="url(#globeGradient)" />
+
+  <!-- Kontinente - Vereinfachte Darstellung -->
+  <g fill="#A6D4F5" opacity="0.7">
+    <path d="M130 145 Q140 130 160 135 Q165 150 150 165 Q135 155 130 145 Z" />
+    <path d="M155 135 Q160 130 170 135 Q180 145 170 155 Q160 150 155 135 Z" />
+    <path d="M145 160 Q150 165 160 160 Q165 155 160 170 Q150 170 145 160 Z" />
   </g>
 
-  <!-- Elektronenbahnen um die Weltkugel -->
-  <g stroke="url(#orbitGradient)" stroke-width="3" opacity="0.8">
-    <ellipse cx="150" cy="150" rx="100" ry="40" fill="none"/>
-    <ellipse cx="150" cy="150" rx="40" ry="100" fill="none" transform="rotate(45 150 150)"/>
-    <ellipse cx="150" cy="150" rx="100" ry="40" fill="none" transform="rotate(90 150 150)"/>
+  <!-- Elektronenbahnen -->
+  <g stroke="#A6D4F5" stroke-width="2" opacity="0.8">
+    <ellipse cx="150" cy="150" rx="90" ry="30" fill="none"/>
+    <ellipse cx="150" cy="150" rx="30" ry="90" fill="none" transform="rotate(45 150 150)"/>
+    <ellipse cx="150" cy="150" rx="90" ry="30" fill="none" transform="rotate(90 150 150)"/>
   </g>
 
   <!-- Elektronen -->
-  <circle cx="250" cy="150" r="8" fill="#B0C4DE"/>
-  <circle cx="150" cy="50" r="8" fill="#B0C4DE"/>
-  <circle cx="50" cy="150" r="8" fill="#B0C4DE"/>
-  <circle cx="150" cy="250" r="8" fill="#B0C4DE"/>
-
+  <circle cx="240" cy="150" r="5" fill="#A6D4F5" />
+  <circle cx="150" cy="60" r="5" fill="#A6D4F5" />
+  <circle cx="60" cy="150" r="5" fill="#A6D4F5" />
+  <circle cx="150" cy="240" r="5" fill="#A6D4F5" />
+  <circle cx="210" cy="90" r="5" fill="#A6D4F5" />
+  <circle cx="90" cy="210" r="5" fill="#A6D4F5" />
+  <circle cx="210" cy="210" r="5" fill="#A6D4F5" />
+  <circle cx="90" cy="90" r="5" fill="#A6D4F5" />
 </svg>
