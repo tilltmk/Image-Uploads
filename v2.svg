@@ -76,7 +76,4 @@
     <circle cx="100" cy="100" r="35" fill="none" />
     <circle cx="100" cy="100" r="45" fill="none" />
   </g>
-
-  <!-- Schriftzug -->
-  <text x="100" y="190" fill="#007acc" font-size="8" font-family="Arial" text-anchor="middle">Geheimdienstlicher Militärischer Sektor</text>
 </svg>
