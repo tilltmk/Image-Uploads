@@ -1,35 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
 
   <!-- Hintergrund -->
   <rect width="100%" height="100%" fill="none"/>
 
-  <!-- Weltkugel (Nukleus) -->
-  <circle cx="100" cy="100" r="40" fill="url(#globeGradient)" stroke="#0A1F44" stroke-width="2"/>
-
-  <!-- Gradient für die Weltkugel -->
+  <!-- Definieren der Farben und Verläufe -->
   <defs>
+    <!-- Gradient für den Globus -->
     <radialGradient id="globeGradient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0A1F44" />
-      <stop offset="100%" stop-color="#1C3D7A" />
+      <stop offset="0%" stop-color="#0A1F44"/>
+      <stop offset="100%" stop-color="#1C3D7A"/>
     </radialGradient>
+    <!-- Verlauf für Elektronenbahnen -->
+    <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E3A59" />
+      <stop offset="100%" stop-color="#0A1F44" />
+    </linearGradient>
+    <!-- Muster für die Länder auf dem Globus -->
+    <pattern id="landPattern" patternUnits="userSpaceOnUse" width="10" height="10">
+      <path d="M0,5 L10,5" stroke="#0A1F44" stroke-width="1"/>
+      <path d="M5,0 L5,10" stroke="#0A1F44" stroke-width="1"/>
+    </pattern>
   </defs>
 
+  <!-- Weltkugel (Nukleus) mit Länderdarstellung -->
+  <circle cx="150" cy="150" r="60" fill="url(#globeGradient)" stroke="#0A1F44" stroke-width="2"/>
+  
+  <!-- Überlagerung der Länder -->
+  <circle cx="150" cy="150" r="60" fill="url(#landPattern)" opacity="0.3"/>
+
   <!-- Elektronenbahnen -->
-  <g stroke="#1C3D7A" stroke-width="2" opacity="0.8">
-    <ellipse cx="100" cy="100" rx="70" ry="30" fill="none"/>
-    <ellipse cx="100" cy="100" rx="30" ry="70" fill="none" transform="rotate(45 100 100)"/>
-    <ellipse cx="100" cy="100" rx="70" ry="30" fill="none" transform="rotate(90 100 100)"/>
+  <g stroke="url(#orbitGradient)" stroke-width="2" opacity="0.8">
+    <ellipse cx="150" cy="150" rx="100" ry="40" fill="none"/>
+    <ellipse cx="150" cy="150" rx="40" ry="100" fill="none" transform="rotate(45 150 150)"/>
+    <ellipse cx="150" cy="150" rx="100" ry="40" fill="none" transform="rotate(90 150 150)"/>
   </g>
 
   <!-- Elektronen -->
-  <circle cx="170" cy="100" r="5" fill="#FFFFFF"/>
-  <circle cx="100" cy="30" r="5" fill="#FFFFFF"/>
-  <circle cx="30" cy="100" r="5" fill="#FFFFFF"/>
-  <circle cx="100" cy="170" r="5" fill="#FFFFFF"/>
-  <circle cx="135" cy="65" r="5" fill="#FFFFFF"/>
-  <circle cx="65" cy="135" r="5" fill="#FFFFFF"/>
-  <circle cx="135" cy="135" r="5" fill="#FFFFFF"/>
-  <circle cx="65" cy="65" r="5" fill="#FFFFFF"/>
+  <circle cx="250" cy="150" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="150" cy="50" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="50" cy="150" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="150" cy="250" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="200" cy="100" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="100" cy="200" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="200" cy="200" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+  <circle cx="100" cy="100" r="6" fill="#FFD700" stroke="#0A1F44" stroke-width="1"/>
+
+  <!-- Optional: Geheime Symbolik hinzufügen (z.B. stilisiertes Auge) -->
+  <!--
+  <circle cx="150" cy="150" r="10" fill="none" stroke="#FFD700" stroke-width="2"/>
+  <path d="M150,140 Q155,150 150,160" stroke="#FFD700" stroke-width="2" fill="none"/>
+  -->
 
 </svg>
